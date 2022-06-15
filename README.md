@@ -1,6 +1,6 @@
 # Pointcloud Scattering
 
-This repository contains code for _"The Manifold Scattering Transform for High-Dimensional Point Cloud Data"_
+This repository contains code for _"The Manifold Scattering Transform for High-Dimensional Point Cloud Data"_ presented at the ICML 2022 Workshop on Topology, Algebra, and Geometry in Machine Learning. Copyright 2022 by the author(s).
 #### Abstract
 
 The manifold scattering transform is a deep fea-
@@ -22,7 +22,10 @@ on a low-dimensional manifold. We show that our
 methods are effective for signal classification and
 manifold classification tasks.
 
-#### To run code the following packages must be installed
 
-- Numpy
-- 
+
+<br>
+
+#### Contact
+Smita Krishnaswamy: smita.krishnaswamy@yale.edu  <br>
+Michael Perlmutter: perlmutter@ucla.edu
