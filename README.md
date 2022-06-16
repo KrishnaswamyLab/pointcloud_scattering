@@ -3,10 +3,10 @@
 This repository contains code for _"The Manifold Scattering Transform for High-Dimensional Point Cloud Data"_ presented at the ICML 2022 Workshop on Topology, Algebra, and Geometry in Machine Learning. Copyright 2022 by the author(s).
 #### Abstract
 
-The manifold scattering transform is a deep fea-
-ture extractor for data defined on a Riemannian
-manifold. It is one of the first examples of extend-
-ing convolutional neural network-like operators to
+The manifold scattering transform is a deep feature
+extractor for data defined on a Riemannian
+manifold. It is one of the first examples of extending
+convolutional neural network-like operators to
 general manifolds. The initial work on this model
 focused primarily on its theoretical stability and
 invariance properties but did not provide meth-
