@@ -11,11 +11,11 @@ general manifolds. The initial work on this model
 focused primarily on its theoretical stability and
 invariance properties but did not provide meth-
 ods for its numerical implementation except in
-the case of two-dimensional surfaces with prede-
-fined meshes. In this work, we present practical
+the case of two-dimensional surfaces with predefined
+meshes. In this work, we present practical
 schemes, based on the theory of diffusion maps,
-for implementing the manifold scattering trans-
-form to datasets arising in naturalistic systems,
+for implementing the manifold scattering transform 
+to datasets arising in naturalistic systems,
 such as single cell genetics, where the data is a
 high-dimensional point cloud modeled as lying
 on a low-dimensional manifold. We show that our
