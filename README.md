@@ -9,8 +9,7 @@ manifold. It is one of the first examples of extending
 convolutional neural network-like operators to
 general manifolds. The initial work on this model
 focused primarily on its theoretical stability and
-invariance properties but did not provide meth-
-ods for its numerical implementation except in
+invariance properties but did not provide methods for its numerical implementation except in
 the case of two-dimensional surfaces with predefined
 meshes. In this work, we present practical
 schemes, based on the theory of diffusion maps,
