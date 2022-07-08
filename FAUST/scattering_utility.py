@@ -8,7 +8,7 @@ def compute_dist(X):
     # computes all (squared) pairwise Euclidean distances between each data point in X
     # D_ij = <x_i - x_j, x_i - x_j>
     G = np.matmul(X, X.T)
-    D = np.diag(G) + np.reshape(np.diag(G), (-1, 1)) - 2 * G
+    D = np.reshape(np.diag(G), (1, -1)) + np.reshape(np.diag(G), (-1, 1)) - 2 * G
     return D
 
 def compute_kernel(D, eps, d):
@@ -25,9 +25,9 @@ def compute_eigen(X, eps, K, d = 2,eps_quantile=0.5):
         triu_dists = np.triu(dists)
         eps = np.quantile(triu_dists[np.nonzero(triu_dists)], eps_quantile)
     W = compute_kernel(dists, eps, d)
-    D = np.diag(np.sum(W, axis=1, keepdims=True))
+    D = np.diag(np.sum(W, axis=1, keepdims=False))
     L = sparse.csr_matrix(D - W)
-    S, U = sparse.linalg.eigs(L, k = K, which='SM')
+    S, U = sparse.linalg.eigsh(L, k = K, which='SM')
     S = np.reshape(S.real, (1, -1))/(eps * n)
     S[0,0] = 0 # manually enforce this
     # normalize eigenvectors in usual l2 norm
