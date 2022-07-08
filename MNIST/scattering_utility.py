@@ -27,7 +27,7 @@ def compute_eigen(X, eps, K, d = 2,eps_quantile=0.5):
     W = compute_kernel(dists, eps, d)
     D = np.diag(np.sum(W, axis=1, keepdims=True))
     L = sparse.csr_matrix(D - W)
-    S, U = sparse.linalg.eigs(L, k = K, which='LM')
+    S, U = sparse.linalg.eigs(L, k = K, which='SM')
     S = np.reshape(S.real, (1, -1))/(eps * n)
     S[0,0] = 0 # manually enforce this
     # normalize eigenvectors in usual l2 norm
