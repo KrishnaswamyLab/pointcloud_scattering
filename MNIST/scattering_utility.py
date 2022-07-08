@@ -66,7 +66,7 @@ def zero_order_feature(Aj, f, N, norm_list):
     else:
         this_F0 = np.abs(f).reshape(-1, 1)
         F0 = np.sum(np.power(this_F0, norm_list[0]),axis=0).reshape(-1, 1)
-        for i in range(2, len(norm_list)):
+        for i in range(1, len(norm_list)):
             F0 = np.vstack((F0, np.sum(np.power(this_F0, norm_list[i]), axis=0).reshape(-1, 1)))
     return F0
 
@@ -77,10 +77,10 @@ def first_order_feature(psi, Wf, Aj, N, norm_list):
     else:
         this_F1 = np.hstack([(1/N) * np.abs(ele) for ele in Wf])
         F1 = np.sum(np.power(this_F1, norm_list[0]),axis=0).reshape(-1, 1)
-        for i in range(2, len(norm_list)):
+        for i in range(1, len(norm_list)):
             F1 = np.vstack((F1, np.sum(np.power(this_F1, norm_list[i]),axis=0).reshape(-1, 1)))
     return np.reshape(F1, (-1, 1))
-    
+
 def selected_second_order_feature(psi,Wf,Aj, N, norm_list):
     #only takes j2 > j1
     temp = np.abs(Wf[0:1])
@@ -94,10 +94,10 @@ def selected_second_order_feature(psi,Wf,Aj, N, norm_list):
     else:
         this_F2 = F2
         F2 = np.sum(np.power(this_F2, norm_list[0]), axis = 0).reshape(-1, 1)
-        for i in range(2, len(norm_list)):
+        for i in range(1, len(norm_list)):
             F2 = np.vstack((F2, np.sum(np.power(this_F2, norm_list[i]), axis=0).reshape(-1, 1)))
     return F2.reshape(-1,1)
-    
+
 
 def generate_feature(psi,Wf,Aj,f, N, norm="none"):
     #with zero order, first order and second order features
@@ -128,4 +128,3 @@ def compute_all_features(eigenval, eigenvec, training_signal, test_signal, train
         these_features = generate_feature(psi,Wf,Aj,test_signal[i],N, norm_list)
         test_feature.append(np.concatenate(these_features,axis=0))
     return training_feature, test_feature
-
