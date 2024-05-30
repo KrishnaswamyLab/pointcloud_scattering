@@ -27,4 +27,4 @@ manifold classification tasks.
 
 #### Contact
 Smita Krishnaswamy: smita.krishnaswamy@yale.edu  <br>
-Michael Perlmutter: perlmutter@ucla.edu
+Michael Perlmutter: mperlmutter@boisestate.edu
